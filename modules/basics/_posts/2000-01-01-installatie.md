@@ -16,7 +16,7 @@ Om code te schrijven gebruik je best een editor. In deze cursus gebruiken we [Vi
 
 Open nu VS Code en installeer de python extensie. Die extensie is niet strikt noodzakelijk, maar ze helpt je bij het schrijven van code.
 
-![image](/img/basics/installatie/python-extension.gif)
+![image](/cursus-python/img/basics/installatie/python-extension.gif)
 
 <div class="header2" markdown = "1">## Voorbereiding
 </div>
@@ -25,7 +25,7 @@ Maak in je OneDrive folder een map `python`, met daarin nog een map `les1`. In V
 
 Nu kan je in het bestandsoverzicht links een bestand toevoegen. Maak een bestand `hello.py`.
 
-![image](/img/basics/installatie/create_file.gif)
+![image](/cursus-python/img/basics/installatie/create_file.gif)
 
 
 <div class="header2" markdown = "1">## Code
@@ -39,7 +39,7 @@ print("Hello, hello")
 
 Klik nu rechtsboven op het pijltje naar rechts. Daarmee voer je je programma uit. Onderaan in de editor verschijnt een 'terminal', een plaats waar je commando's kan uitvoeren. Je programma wordt hier uitgevoerd en toont de tekst op het scherm.
 
-![image](/img/basics/installatie/hello.gif)
+![image](/cursus-python/img/basics/installatie/hello.gif)
 
 <div class="header2" markdown = "1">## What just happened?
 </div>
