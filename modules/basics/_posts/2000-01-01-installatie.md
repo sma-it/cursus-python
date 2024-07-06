@@ -16,7 +16,7 @@ Om code te schrijven gebruik je best een editor. In deze cursus gebruiken we [Vi
 
 Open nu VS Code en installeer de python extensie. Die extensie is niet strikt noodzakelijk, maar ze helpt je bij het schrijven van code.
 
-![image](/cursus-python/img/basics/installatie/python-extension.gif)
+![image]({{ site.baseurl }}/img/basics/installatie/python-extension.gif)
 
 <div class="header2" markdown = "1">## Voorbereiding
 </div>
@@ -25,7 +25,7 @@ Maak in je OneDrive folder een map `python`, met daarin nog een map `les1`. In V
 
 Nu kan je in het bestandsoverzicht links een bestand toevoegen. Maak een bestand `hello.py`.
 
-![image](/cursus-python/img/basics/installatie/create_file.gif)
+![image]({{ site.baseurl }}/img/basics/installatie/create_file.gif)
 
 
 <div class="header2" markdown = "1">## Code
@@ -39,7 +39,7 @@ print("Hello, hello")
 
 Klik nu rechtsboven op het pijltje naar rechts. Daarmee voer je je programma uit. Onderaan in de editor verschijnt een 'terminal', een plaats waar je commando's kan uitvoeren. Je programma wordt hier uitgevoerd en toont de tekst op het scherm.
 
-![image](/cursus-python/img/basics/installatie/hello.gif)
+![image]({{ site.baseurl }}/img/basics/installatie/hello.gif)
 
 <div class="header2" markdown = "1">## What just happened?
 </div>
@@ -58,3 +58,7 @@ Elke taal heeft een grammatica, ook een programmeertaal. Wanneer je in spreektaa
 * Code meer naar rechts zetten heeft betekenis. Je kan dat niet zomaar doen.
 * Er is een verschil tussen hoofdletters een kleine letters.
 * tekst zet je tussen aanhalingstekens.
+
+<div class="note oefening"><p>Volg de les 'Welcome to Python' op <a href="https://brilliant.org/courses/programming-python/introduction-105/welcome-to-python/?from_llp=computer-science" target="_blank">Brilliant.org</a></p>
+<p>Volg de les 'Practice Welcome to Python' op <a href="https://brilliant.org/courses/programming-python/introduction-105/practice/pypractice11-v0-set_one/?from_llp=computer-science" target="_blank">Brilliant.org</a></p>
+</div>

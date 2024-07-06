@@ -1,5 +1,5 @@
 # basic configuration
-baseurl:
+# baseurl:
 repository: sma-it/cursus-python
 markdown: kramdown
 permalink: /:categories/:title/
