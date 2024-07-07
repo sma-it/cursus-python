@@ -59,6 +59,6 @@ Elke taal heeft een grammatica, ook een programmeertaal. Wanneer je in spreektaa
 * Er is een verschil tussen hoofdletters een kleine letters.
 * tekst zet je tussen aanhalingstekens.
 
-<div class="note oefening"><p>Volg de les 'Welcome to Python' op <a href="https://brilliant.org/courses/programming-python/introduction-105/welcome-to-python/?from_llp=computer-science" target="_blank">Brilliant.org</a></p>
-<p>Volg de les 'Practice Welcome to Python' op <a href="https://brilliant.org/courses/programming-python/introduction-105/practice/pypractice11-v0-set_one/?from_llp=computer-science" target="_blank">Brilliant.org</a></p>
+<div class="note oefening"><p>Volg de les <a href="https://brilliant.org/courses/programming-python/introduction-105/welcome-to-python/?from_llp=computer-science" target="_blank">Welcome to Python</a> op Brilliant.org</p>
+<p>Maak de oefening <a href="https://brilliant.org/courses/programming-python/introduction-105/practice/pypractice11-v0-set_one/?from_llp=computer-science" target="_blank">Practice Welcome to Python</a> op Brilliant.org</p>
 </div>
