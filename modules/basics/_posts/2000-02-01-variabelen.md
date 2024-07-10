@@ -2,21 +2,21 @@
 title: Variabelen
 ---
 
-<div class="header1" id="top" markdown = "1"># Nummers
+<div class="header1" id="top" markdown = "1"># Getallen
 </div>
 
-<div class="header2" markdown = "1">## Nummers in Python
+<div class="header2" markdown = "1">## Getallen in Python
 </div>
 
-Als je een tekst wil tonen, dan kan je de print instructie gebruiken. Maar je kan met print ook nummers tonen:
+Als je een tekst wil tonen, dan kan je de print instructie gebruiken. Maar je kan met print ook getallen tonen:
 
 ```python
 print(123)
 ```
 
-Valt het je op dat er nu geen aanhalingstekens rond het nummer staan? Je had die kunnen toevoegen, maar dan beschouwt Python dat als een tekst waar toevallig enkel cijfers in staan.
+Valt het je op dat er nu geen aanhalingstekens rond het getal staan? Je had die kunnen toevoegen, maar dan beschouwt Python dat als een tekst waar toevallig enkel cijfers in staan.
 
-Met echte nummers werken heeft het voordeel dat je ermee kan rekenen. Test de volgende code maar eens uit:
+Met echte getallen werken heeft het voordeel dat je ermee kan rekenen. Test de volgende code maar eens uit:
 
 ```python
 print(12+3)
@@ -25,13 +25,13 @@ print("12"+"3")
 
 Als je het plusteken gebruikt met tekst, dan plak je deze teksten aan mekaar. Dat wordt vaak gebruikt en daar bestaat een woord voor: `concatenate`. Je zal dat later nog tegenkomen.
 
-Als je het plusteken gebruikt met nummers, dan ben je aan het rekenen. Je kan alle standaard wiskundige operatoren gebruiken: `+`, `-`, `*` en `\`.
+Als je het plusteken gebruikt met getallen, dan ben je aan het rekenen. Je kan alle standaard wiskundige operatoren gebruiken: `+`, `-`, `*` en `/`.
 
 Maar pas op! Wat gebeurt er als je de vorige getallen (12 + 3) ook nog eens vermenigvuldigt met 10? Test dit uit en controleer of het resultaat klopt.
 
 Als je het goed deed, dan zou het resultaat 150 moeten zijn. Kwam je bij 42 uit? Dan vergat je rekening te houden met de volgorde van bewerkingen. Die blijft net zoals bij wiskunde van toepassing. Vergeet dus geen haakjes te plaatsen!
 
-<div class="header2" markdown = "1">## Tekst en nummers combineren
+<div class="header2" markdown = "1">## Tekst en getallen combineren
 </div>
 
 ```python 
@@ -44,15 +44,15 @@ Test de bovenstaande instructie in je python editor. Je krijgt een foutmelding:
 TypeError: can only concatenate str (not "int") to str
 ```
 
-Wat concatenate betekent weet je al. String betekent tekst en wordt hier afgekort tot str. Integer betekent (geheel) getal en wordt hier afgekort tot int. Je kan dus geen teksten en nummers aan mekaar plakken.
+Wat concatenate betekent weet je al. String betekent tekst en wordt hier afgekort tot str. Integer betekent (geheel) getal en wordt hier afgekort tot int. Je kan dus geen teksten en getallen aan mekaar plakken.
 
-Wil je toch tekst en nummers combineren in een print instructie, dan doe je dat zo:
+Wil je toch tekst en getallen combineren in een print instructie, dan doe je dat zo:
 
 ```python 
 print("Het antwoord is:", 42)
 ```
 
-Wil je ook nog rekenen op die plaats, dan gebruik je een komma om teksten en nummers te scheiden, en verder operatoren:
+Wil je ook nog rekenen op die plaats, dan gebruik je een komma om teksten en getallen te scheiden, en verder operatoren:
 
 ```python 
 print("Het antwoord is:", 12 + 3 * 10)
@@ -72,7 +72,7 @@ Test deze code even uit. Maar in plaats van 1 print instructie zet je er 10 onde
 print("Hello Goodbye!")
 ```
 
-Maar de tekst is fout! Het moet eigenlijk zijn: "Hello, goodbye!". Nu moet je de tekst 10 keer aanpassen, wat niet handig is. Als je tekst of nummers meer dan eens wil gebruiken, dan geef je ze best een label. We noemen dat een variabele.
+Maar de tekst is fout! Het moet eigenlijk zijn: "Hello, goodbye!". Nu moet je de tekst 10 keer aanpassen, wat niet handig is. Als je tekst of getallen meer dan eens wil gebruiken, dan geef je ze best een label. We noemen dat een variabele.
 
 ```python
 message = "Hello Goodbye!"
