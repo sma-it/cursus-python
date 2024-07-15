@@ -287,3 +287,188 @@ The clouds give rest
 To the moon-beholders.
 """
 ```
+
+<div class="header1" id="top" markdown = "1"># Substrings
+</div>
+
+<div class="header2" markdown = "1">## Definitie
+</div>
+
+Een substring is een deel van een grotere string. Als je bijvoorbeeld de string `"hallo"` hebt, dan zijn `"hal"`, `"allo"` en zelfs `"a"` substrings van `"hallo"`. Substrings behouden de volgorde van de karakters zoals ze in de originele string voorkomen.
+
+<div class="header2" markdown = "1">## Indexering en Slicing
+</div>
+
+Python biedt krachtige mogelijkheden om substrings te extraheren met behulp van indexering en slicing.
+
+### Karakter Extractie
+
+Elk karakter in een string heeft een positie, een index, beginnend bij 0 voor het eerste karakter.
+
+```python
+tekst = "hallo"
+# Enkel karakter op positie 1 (0-gebaseerd)
+print(tekst[1])  # Output: "a"
+```
+
+In dit voorbeeld wordt het tweede karakter van de string `"hallo"` opgehaald. De indexering begint bij 0, dus het eerste karakter heeft index 0, het tweede karakter heeft index 1, enzovoort.
+
+### Meerdere Karakters
+
+Je kunt een reeks karakters, oftewel een substring, extraheren met slicing. De syntax voor slicing is `string[start:end]`.
+
+- `start` is de beginindex (inclusief).
+- `end` is de eindindex (exclusief).
+
+```python
+tekst = "hallo, wereld"
+# Substring van positie 0 tot 4 (niet inclusief 4)
+print(tekst[0:4])  # Output: "hall"
+```
+
+In dit voorbeeld wordt de substring van de beginindex 0 tot de eindindex 4 (exclusief) geëxtraheerd. Dit resulteert in `"hall"`.
+
+### Positie tot het einde
+
+Je kunt een substring extraheren vanaf een bepaalde positie tot het einde van de string door alleen de startindex op te geven.
+
+```python
+tekst = "hallo, wereld"
+# Substring van positie 7 tot het einde van de string
+print(tekst[7:])  # Output: "wereld"
+```
+
+In dit voorbeeld wordt de substring vanaf index 7 tot het einde van de string geëxtraheerd, resulterend in `"wereld"`.
+
+### Negatieve Index
+
+Negatieve indexen tellen vanaf het einde van de string. De laatste positie heeft index `-1`, de voorlaatste `-2`, enzovoort.
+
+```python
+tekst = "hallo, wereld"
+# Substring met negatieve index
+print(tekst[-6:])  # Output: "wereld"
+```
+
+In dit voorbeeld wordt de substring vanaf de zesde positie van het einde tot het einde van de string geëxtraheerd.
+
+### Steps
+
+Je kunt ook een stapgrootte opgeven met slicing door `string[start:end:step]` te gebruiken. De `step` parameter bepaalt hoe de index tijdens de slicing toeneemt.
+
+```python
+tekst = "hallo, wereld"
+# Substring met een stap van 2
+print(tekst[::2])  # Output: "hlo ed"
+```
+
+In dit voorbeeld worden karakters geëxtraheerd met een stap van 2, resulterend in `"hlo ed"`.
+
+<div class="header2" markdown = "1">## `in` en `not in`
+</div>
+
+Met de `in` en `not in` operatoren kun je eenvoudig controleren of een substring voorkomt in een string. Deze operatoren zijn handig in `if`-voorwaarden.
+
+```python
+tekst = "hallo, wereld"
+
+# Gebruik van 'in'
+if "wereld" in tekst:
+    print("De substring 'wereld' is aanwezig in de tekst.")
+
+# Gebruik van 'not in'
+if "Python" not in tekst:
+    print("De substring 'Python' is niet aanwezig in de tekst.")
+```
+
+In dit voorbeeld controleren we of de substring `"wereld"` aanwezig is in de string `"hallo, wereld"`, en of de substring `"Python"` niet aanwezig is.
+
+<div class="note oefening"><p>Volg de les <a href="https://brilliant.org/courses/programming-python/strings-4/strings-intermediate-2/?from_llp=computer-science" target="_blank">The Replace Function</a> op Brilliant.org</p>
+</div>
+
+<div class="header2" markdown = "1">## Oefeningen
+</div>
+
+### Oefening 1
+
+Gegeven de string `"Python programming is fun!"`, toon de volgende karakters op het scherm:
+
+1. Het eerste karakter
+2. Het vijfde karakter
+3. Het laatste karakter
+
+```python
+tekst = "Python programming is fun!"
+```
+
+### Oefening 2
+
+Gegeven de string `"Hello, world!"`, toon de volgende substrings op het scherm:
+
+1. De eerste vijf karakters
+2. De laatste zes karakters
+3. De karakters van positie 7 tot en met 11
+
+```python
+tekst = "Hello, world!"
+```
+
+### Oefening 3
+
+Gegeven de string `"Slicing with negative indices"`, toon de volgende substrings op het scherm:
+
+1. De laatste drie karakters
+2. De karakters van positie -10 tot en met -6
+3. De gehele string behalve het laatste karakter
+
+```python
+tekst = "Slicing with negative indices"
+```
+
+### Oefening 4
+
+Gegeven de string `"abcdefghij"`, toon de volgende substrings:
+
+1. Elke tweede karakter
+2. Elke derde karakter
+3. De string in omgekeerde volgorde
+
+```python
+tekst = "abcdefghij"
+```
+
+### Oefening 5
+
+Gegeven de string `"Learn Python by doing exercises"`, extraheer en print de substring die begint na "Python" en eindigt voor "exercises". 
+
+Het is niet de bedoeling dat je gaat tellen op welke positie de substring begint en eindigt. Gebruik de find functie om de posities te vinden.
+
+```python
+tekst = "Learn Python by doing exercises"
+```
+
+### Oefening 6
+
+Vraag de gebruiker om een string en twee indices (start en eind). Print de substring die tussen deze twee indices ligt.
+
+### Oefening 7
+
+Vraag de gebruiker om zijn volledige naam in te voeren en toon de initialen van de naam, in hoofdletters. Tip: er bestaat een functie om een string te splitsen in afzonderlijke woorden.
+
+```python
+volledige_naam = input("Voer je volledige naam in: ")
+```
+
+### Oefening 8
+
+Vraag de gebruiker om een e-mailadres in te voeren en toon enkel de domeinnaam.
+
+### Oefening 9
+
+Vraag de gebruiker om een zin in te voeren en print elk woord in omgekeerde volgorde.
+
+
+### Oefening 10
+
+Vraag de gebruiker om een postcode in te voeren en controleer of deze uit precies vier cijfers bestaat.
+
