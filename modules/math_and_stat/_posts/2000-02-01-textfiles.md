@@ -152,7 +152,7 @@ Schrijf een Python-script dat telt hoe vaak elke letter voorkomt in **jokes.txt*
 
 ### Oefening 4: Bestand manueel verplaatsen naar een submap en opnieuw openen
 
-Verplaats het bestand **leerkracht_grap.txt** nu handmatig naar een submap genaamd **data**. Deze submap bevindt zich in dezelfde map als het script.
+Verplaats het bestand **jokes.txt** nu handmatig naar een submap genaamd **data**. Deze submap bevindt zich in dezelfde map als het script.
 
 **Instructies**:
 - Verplaats het bestand handmatig naar de submap **data**.
@@ -162,7 +162,7 @@ Verplaats het bestand **leerkracht_grap.txt** nu handmatig naar een submap genaa
 
 ### Oefening 5: Bestand manueel verplaatsen naar een andere map op je computer en opnieuw openen
 
-Verplaats het bestand **leerkracht_grap.txt** handmatig naar een andere map op je computer (bijvoorbeeld je bureaublad).
+Verplaats het bestand **jokes.txt** handmatig naar een andere map op je computer (bijvoorbeeld je bureaublad).
 
 **Instructies**:
 - Schrijf een Python-script dat het bestand leest, zelfs als het zich nu in een andere map bevindt.
