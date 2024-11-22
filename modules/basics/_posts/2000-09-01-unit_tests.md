@@ -486,78 +486,95 @@ def test_aftrekken(positief_getal, negatief_getal):
     assert aftrekken(positief_getal, negatief_getal) == 55
 ```
 
-### Fixture Scope
+### Oefeningen
 
-Fixtures kunnen verschillende "scopes" hebben:
+#### **Oefening 1: Woordenlijst**
 
-- **Function (standaard):** Voor elke test opnieuw aangemaakt.
-- **Module:** Eén keer per module.
-- **Session:** Eén keer per testsessie.
+**Opdracht:**
 
-**Voorbeeld:**
+Schrijf een fixture `woordenlijst` die een lijst retourneert met enkele voorbeeldwoorden, zoals `["hallo", "wereld", "pytest"]`.
+
+Schrijf een testfunctie `test_woordenlijst_lengte()` die controleert of de lengte van de woordenlijst correct is.
+
+**Startcode:**
 
 ```python
-@pytest.fixture(scope="module")
-def gedeelde_resource():
-    # Code om resource aan te maken
-    yield resource
-    # Code om resource op te ruimen
+# test_strings.py
+import pytest
+
+@pytest.fixture
+def woordenlijst():
+    # Jouw code hier
+    pass
+
+def test_woordenlijst_lengte(woordenlijst):
+    pass
+```
+
+---
+
+#### **Oefening 2: Een Persoon als Object**
+
+**Opdracht:**
+
+Schrijf een fixture `persoon` die een dictionary retourneert met informatie over een persoon, zoals:
+
+```python
+{
+    "naam": "Jan",
+    "leeftijd": 25,
+    "woonplaats": "Amsterdam"
+}
+```
+
+Schrijf een testfunctie `test_persoon_informatie()` die controleert of de leeftijd en woonplaats van de persoon correct zijn.
+
+**Startcode:**
+
+```python
+# test_persoon.py
+import pytest
+
+@pytest.fixture
+def persoon():
+    # Jouw code hier
+    pass
+
+def test_persoon_informatie(persoon):
+    pass
+```
+
+---
+
+#### **Oefening 3: Getallenlijst voor Berekeningen**
+
+**Opdracht:**
+
+Schrijf een fixture `getallenlijst` die een lijst retourneert met de getallen `[2, 4, 6, 8]`.
+
+Schrijf twee testfuncties:
+1. `test_som_getallenlijst()` controleert of de som van de lijst correct is.
+2. `test_max_getallenlijst()` controleert of het maximale getal in de lijst correct is.
+
+**Startcode:**
+
+```python
+# test_getallen.py
+import pytest
+
+@pytest.fixture
+def getallenlijst():
+    # Jouw code hier
+    pass
+
+def test_som_getallenlijst(getallenlijst):
+    pass
+
+def test_max_getallenlijst(getallenlijst):
+    pass
 ```
 
 
-<div class="header2" markdown="1">## Parameterisatie van Tests
-</div>
-
-### Waarom Parameteriseren?
-
-Parameterisatie stelt je in staat om dezelfde test met verschillende sets data uit te voeren zonder code te dupliceren.
-
-### Gebruik van `@pytest.mark.parametrize`
-
-#### **Voorbeeld:**
-
-```python
-@pytest.mark.parametrize("a, b, resultaat", [
-    (2, 3, 5),
-    (0, 0, 0),
-    (-1, 1, 0),
-])
-def test_optellen(a, b, resultaat):
-    assert optellen(a, b) == resultaat
-```
-
-Hier wordt de `test_optellen`-functie drie keer uitgevoerd met verschillende waarden.
-
-### Complexere Parameterisatie
-
-Je kunt ook meer complexe data testen:
-
-```python
-@pytest.mark.parametrize("woord, omgekeerd", [
-    ("hallo", "ollah"),
-    ("python", "nohtyp"),
-    ("", ""),
-])
-def test_omkeren(woord, omgekeerd):
-    assert omkeren(woord) == omgekeerd
-```
-
-**Opmerking:** Je moet de functie `omkeren` zelf implementeren voordat dit werkt.
-
-### Parameterisatie van Fixtures
-
-Je kunt fixtures ook parameteriseren:
-
-```python
-@pytest.fixture(params=[0, 1, -1])
-def getal(request):
-    return request.param
-
-def test_is_positive(getal):
-    assert (getal > 0) == is_positive(getal)
-```
-
-**Opmerking:** Ook hier moet je de functie `is_positive` zelf definiëren.
 
 <div class="header2" markdown="1">## Testen van Uitzonderingen en Foutafhandeling
 </div>
@@ -624,7 +641,108 @@ def test_wortel_negatief():
         wortel(-4)
 ```
 
+### **Oefeningen**
+
+#### **Oefening 1: Leeftijd Validatie**
+
+**Opdracht:**
+
+Schrijf een functie `controleer_leeftijd(leeftijd)` die een `ValueError` opwerpt als de leeftijd negatief is, met de boodschap `"Leeftijd kan niet negatief zijn"`. Als de leeftijd 0 of hoger is, retourneert de functie `"Leeftijd is geldig"`.
+
+Schrijf in `test_leeftijd.py` een testfunctie `test_negatieve_leeftijd()` die controleert of de juiste uitzondering wordt opgeworpen voor negatieve leeftijden, inclusief het foutbericht.
+
+**Startcode (`leeftijd.py`):**
+
+```python
+# leeftijd.py
+
+def controleer_leeftijd(leeftijd):
+    # Jouw code hier
+    pass
+```
+
+**Startcode (`test_leeftijd.py`):**
+
+```python
+# test_leeftijd.py
+import pytest
+from leeftijd import controleer_leeftijd
+
+def test_negatieve_leeftijd():
+    pass
+```
+
+---
+
+#### **Oefening 2: Deling Met Een Foutbericht**
+
+**Opdracht:**
+
+Schrijf een functie `veilige_deling(a, b)` die een `ZeroDivisionError` opwerpt als `b` nul is, met de foutmelding `"Deling door nul is niet toegestaan"`. Als `b` niet nul is, retourneert de functie de waarde van `a / b`.
+
+Schrijf in `test_deling.py` een testfunctie `test_deling_door_nul()` die controleert of de juiste uitzondering en foutmelding worden gegenereerd.
+
+**Startcode (`deling.py`):**
+
+```python
+# deling.py
+
+def veilige_deling(a, b):
+    # Jouw code hier
+    pass
+```
+
+**Startcode (`test_deling.py`):**
+
+```python
+# test_deling.py
+import pytest
+from deling import veilige_deling
+
+def test_deling_door_nul():
+    pass
+```
+
+---
+
+#### **Oefening 3: Geldige Emailadressen**
+
+**Opdracht:**
+
+Schrijf een functie `valideer_email(email)` die een `ValueError` opwerpt als de string `email` geen `"@"` bevat, met de foutmelding `"Ongeldig emailadres"`. Als het emailadres wel geldig is, retourneert de functie `"Email is geldig"`.
+
+Schrijf in `test_email.py` testfuncties die het volgende controleren:
+
+1. `test_ongeldige_email()` controleert of de juiste uitzondering en foutmelding worden gegenereerd voor een ongeldig emailadres zoals `"gebruikergmail.com"`.
+2. `test_geldige_email()` controleert of de functie correct werkt voor een geldig emailadres zoals `"gebruiker@gmail.com"`.
+
+**Startcode (`email.py`):**
+
+```python
+# email.py
+
+def valideer_email(email):
+    # Jouw code hier
+    pass
+```
+
+**Startcode (`test_email.py`):**
+
+```python
+# test_email.py
+import pytest
+from email import valideer_email
+
+def test_ongeldige_email():
+    pass
+
+def test_geldige_email():
+    pass
+```
+
+
 <div class="header2" markdown="1">## Best Practices en Toepassing in een Project
+</div>
 
 ### Best Practices
 
@@ -682,9 +800,6 @@ Gebruik fixtures en parameterisatie om je tests efficiënt te maken.
 #### **Stap 4: Tests Uitvoeren en Verbeteren**
 
 Voer je tests uit met `pytest` en corrigeer eventuele fouten in je code of tests.
-
-
-
 
 <div class="header2" markdown="1">## Veelgestelde Vragen
 </div>
