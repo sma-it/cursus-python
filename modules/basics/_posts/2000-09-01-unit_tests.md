@@ -762,44 +762,82 @@ def test_geldige_email():
 
   Voer je tests vaak uit tijdens het coderen om problemen vroeg te detecteren.
 
-### Mini-Project: Een Eenvoudige Rekenmachine
+Hier is een alternatieve opdracht die aansluit bij het hoofdstuk over sorteeralgoritmen, waarbij de nadruk ligt op de toepassing van algoritmen, unit tests, fixtures, en foutafhandeling:
 
-#### Stap 1: Projectstructuur
+---
 
-Maak een map voor je project met de volgende structuur:
+### **Mini-Project: Een Eenvoudige Bestandsbeheerder**
 
+**Stap 1: Projectstructuur**  
+Maak een map voor je project met de volgende structuur:  
+
+```plaintext
+bestandsbeheer_project/
+├── bestandsbeheer.py
+├── test_bestandsbeheer.py
 ```
-rekenmachine_project/
-├── rekenmachine.py
-├── test_rekenmachine.py
-```
 
-#### Stap 2: Functionaliteiten Implementeren
+---
 
-In `rekenmachine.py` implementeer je de functies:
+**Stap 2: Functionaliteiten Implementeren**  
+In `bestandsbeheer.py` implementeer je de volgende functies:  
 
-- `optellen(a, b)`
-- `aftrekken(a, b)`
-- `vermenigvuldigen(a, b)`
-- `delen(a, b)`
-- `machtsverheffen(a, b)`
-- `wortel(x)`
+1. **Bestanden sorteren op grootte**  
+   ```python
+   def sorteer_op_grootte(bestanden: list[tuple[str, int]]) -> list[tuple[str, int]]:
+       """Sorteert een lijst van (bestandsnaam, grootte) op grootte."""
+   ```
 
-Zorg voor foutafhandeling waar nodig.
+2. **Bestanden filteren op extensie**  
+   ```python
+   def filter_op_extensie(bestanden: list[str], extensie: str) -> list[str]:
+       """Filtert bestanden die eindigen op een bepaalde extensie."""
+   ```
 
-#### Stap 3: Tests Schrijven**
+3. **Bestanden splitsen op grootte (groter of kleiner dan een drempelwaarde)**  
+   ```python
+   def splits_op_grootte(bestanden: list[tuple[str, int]], drempel: int) -> tuple[list[tuple[str, int]], list[tuple[str, int]]]:
+       """Splitst bestanden in twee groepen op basis van grootte."""
+   ```
 
-In `test_rekenmachine.py` schrijf je tests voor alle functies, inclusief:
+4. **Een samenvatting genereren**  
+   ```python
+   def genereer_samenvatting(bestanden: list[tuple[str, int]]) -> dict:
+       """Geeft een samenvatting met totaal aantal bestanden, gemiddelde grootte, grootste en kleinste bestand."""
+   ```
 
-- Normale gevallen
-- Randgevallen (bijv. nul, negatieve getallen)
-- Uitzonderingen (bijv. delen door nul)
+**Zorg voor foutafhandeling waar nodig, bijvoorbeeld:**  
+- Controleer of inputs geldig zijn (bijv. correcte types of niet-leeg).  
+- Geef een foutmelding als een bestandsgrootte negatief is.
 
-Gebruik fixtures en parameterisatie om je tests efficiënt te maken.
+---
 
-#### **Stap 4: Tests Uitvoeren en Verbeteren**
+**Stap 3: Tests Schrijven**  
+In `test_bestandsbeheer.py` schrijf je tests voor alle functies, inclusief:  
 
-Voer je tests uit met `pytest` en corrigeer eventuele fouten in je code of tests.
+1. **Normale gevallen**  
+   - Een lijst van bestanden met verschillende groottes en extensies.  
+   - Test op correcte sortering, filtering, splitsing en samenvatting.  
+
+2. **Randgevallen**  
+   - Lege lijsten.  
+   - Bestanden zonder extensie.  
+   - Bestanden met gelijke groottes.  
+
+3. **Uitzonderingen**  
+   - Negatieve bestandsgroottes.  
+   - Verkeerde types (bijv. een string in plaats van een lijst).  
+
+**Gebruik fixtures en parameterisatie:**  
+- Maak gebruik van een fixture om voorbeeldgegevens aan te maken (bijv. lijsten van bestanden).  
+- Parameteriseer tests met verschillende invoercombinaties.  
+
+---
+
+**Uitbreiding (optioneel):**  
+Als er tijd is, kun je een extra functie implementeren om bestanden te sorteren op meerdere criteria (bijvoorbeeld eerst op extensie, dan op grootte).
+
+
 
 <div class="header2" markdown="1">## Veelgestelde Vragen
 </div>
