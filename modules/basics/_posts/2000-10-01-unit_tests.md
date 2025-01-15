@@ -853,3 +853,213 @@ Nee, er zijn ook andere frameworks zoals `unittest` (standaard in Python) en `no
 **3. Wat als ik een test niet begrijp of vastloop?**
 
 Probeer de foutmelding te lezen en te begrijpen wat er misgaat. Je kunt ook online zoeken naar oplossingen of vragen stellen op forums zoals Stack Overflow.
+
+### Unit Tests met Classes
+
+Naast het testen van losse functies, kun je ook unit tests schrijven voor classes en hun methoden. Hier is een voorbeeld van hoe je dit kunt doen.
+
+#### Stap 1: Een eenvoudige class schrijven
+
+Maak een nieuw Python-bestand genaamd `bankrekening.py` en voeg de volgende code toe:
+
+```python
+# bankrekening.py
+
+class Bankrekening:
+    def __init__(self, saldo=0):
+        self.saldo = saldo
+
+    def storten(self, bedrag):
+        if bedrag > 0:
+            self.saldo += bedrag
+        else:
+            raise ValueError("Bedrag moet positief zijn")
+
+    def opnemen(self, bedrag):
+        if bedrag > self.saldo:
+            raise ValueError("Onvoldoende saldo")
+        self.saldo -= bedrag
+
+    def get_saldo(self):
+        return self.saldo
+```
+
+Deze class vertegenwoordigt een eenvoudige bankrekening met methoden om geld te storten, op te nemen en het saldo op te vragen.
+
+#### Stap 2: Een testbestand maken
+
+Maak een nieuw bestand genaamd `test_bankrekening.py` in dezelfde map en voeg de volgende code toe:
+
+```python
+# test_bankrekening.py
+
+import pytest
+from bankrekening import Bankrekening
+
+@pytest.fixture
+def nieuwe_rekening():
+    return Bankrekening()
+
+def test_storten(nieuwe_rekening):
+    nieuwe_rekening.storten(100)
+    assert nieuwe_rekening.get_saldo() == 100
+
+def test_opnemen(nieuwe_rekening):
+    nieuwe_rekening.storten(100)
+    nieuwe_rekening.opnemen(50)
+    assert nieuwe_rekening.get_saldo() == 50
+
+def test_opnemen_onvoldoende_saldo(nieuwe_rekening):
+    nieuwe_rekening.storten(50)
+    with pytest.raises(ValueError):
+        nieuwe_rekening.opnemen(100)
+
+def test_storten_negatief_bedrag(nieuwe_rekening):
+    with pytest.raises(ValueError):
+        nieuwe_rekening.storten(-50)
+```
+
+**Uitleg:**
+
+- **Fixture:** De fixture `nieuwe_rekening` maakt een nieuwe `Bankrekening`-instantie aan voor elke test.
+- **Testmethoden:** Elke testmethode test een specifieke functionaliteit van de `Bankrekening`-class.
+- **Uitzonderingen:** Tests controleren ook of de juiste uitzonderingen worden opgeworpen bij ongeldige operaties.
+
+#### Stap 3: De tests uitvoeren
+
+Open de terminal, navigeer naar de map met je bestanden en voer uit:
+
+```bash
+pytest
+```
+
+**Verwachte output:**
+
+```bash
+==================== test session starts ====================
+collected 4 items
+
+test_bankrekening.py ....                                 [100%]
+
+===================== 4 passed in X.XXs ======================
+```
+
+Een punt `.` betekent dat de test is geslaagd.
+
+Met deze aanpak kun je eenvoudig unit tests schrijven voor classes en hun methoden, wat helpt bij het waarborgen van de betrouwbaarheid en correctheid van je code.
+
+### Oefeningen met Classes
+
+#### Oefening 1: Een Simpele Rekenmachine Class
+
+**Opdracht:**
+
+Schrijf een class `Rekenmachine` in `rekenmachine_class.py` met de volgende methoden:
+
+```python
+# rekenmachine_class.py
+
+class Rekenmachine:
+    def optellen(self, a, b):
+        return a + b
+
+    def aftrekken(self, a, b):
+        return a - b
+
+    def vermenigvuldigen(self, a, b):
+        return a * b
+
+    def delen(self, a, b):
+        if b == 0:
+            raise ValueError("Kan niet delen door nul.")
+        return a / b
+```
+
+Schrijf in `test_rekenmachine_class.py` testfuncties voor alle methoden van de `Rekenmachine` class. Zorg ervoor dat je ook uitzonderingen test, zoals delen door nul.
+
+**Startcode (`test_rekenmachine_class.py`):**
+
+```python
+# test_rekenmachine_class.py
+import pytest
+from rekenmachine_class import Rekenmachine
+
+@pytest.fixture
+def rekenmachine():
+    return Rekenmachine()
+
+def test_optellen(rekenmachine):
+    pass
+
+def test_aftrekken(rekenmachine):
+    pass
+
+def test_vermenigvuldigen(rekenmachine):
+    pass
+
+def test_delen(rekenmachine):
+    pass
+
+def test_delen_door_nul(rekenmachine):
+    pass
+```
+
+---
+
+#### Oefening 2: Een Simpele Bankrekening Class
+
+**Opdracht:**
+
+Schrijf een class `Bankrekening` in `bankrekening_class.py` met de volgende methoden:
+
+```python
+# bankrekening_class.py
+
+class Bankrekening:
+    def __init__(self, saldo=0):
+        self.saldo = saldo
+
+    def storten(self, bedrag):
+        if bedrag > 0:
+            self.saldo += bedrag
+        else:
+            raise ValueError("Bedrag moet positief zijn")
+
+    def opnemen(self, bedrag):
+        if bedrag > self.saldo:
+            raise ValueError("Onvoldoende saldo")
+        self.saldo -= bedrag
+
+    def get_saldo(self):
+        return self.saldo
+```
+
+Schrijf in `test_bankrekening_class.py` testfuncties voor alle methoden van de `Bankrekening` class. Zorg ervoor dat je ook uitzonderingen test, zoals het opnemen van meer geld dan beschikbaar is en het storten van een negatief bedrag.
+
+---
+
+#### Oefening 3: Een Simpele Product Class
+
+**Opdracht:**
+
+Schrijf een class `Product` in `product_class.py` met de volgende methoden:
+
+```python
+# product_class.py
+
+class Product:
+    def __init__(self, naam, prijs):
+        self.naam = naam
+        self.prijs = prijs
+
+    def wijzig_prijs(self, nieuwe_prijs):
+        if nieuwe_prijs < 0:
+            raise ValueError("Prijs kan niet negatief zijn")
+        self.prijs = nieuwe_prijs
+
+    def get_prijs(self):
+        return self.prijs
+```
+
+Schrijf in `test_product_class.py` testfuncties voor alle methoden van de `Product` class. Zorg ervoor dat je ook uitzonderingen test, zoals het instellen van een negatieve prijs.
+
